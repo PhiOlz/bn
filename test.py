@@ -26,10 +26,10 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write("""</select><input type="submit">
         </input></form>""")
 
-        self.response.write('Delete Post Here : <select name = "del">')
+        self.response.write('<form method="post">Delete Post Here : <select name = "del">')
         for self.comment in self.query:
             self.response.write('<option>%s</option>' % self.comment.content)
-        self.response.write('</select><input type="submit"></input>')
+        self.response.write('</select><input type="submit"></input></form>')
         self.response.write('</body></html>')
 
     def post(self):
