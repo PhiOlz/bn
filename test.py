@@ -12,8 +12,8 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write("""<html><h1>Parallel Project</h1><body>
         Post Here : <form method="post">
         <input type="textarea" name="post"></input>
-        <input type="submit"></input></form>
-        Search & View Post Here : <form method="post>
+        <input type="submit"></input></form>""")
+        self.response.write("""Search & View Post Here : <form method="post>
         <select name="pos">""")
         for self.comment in self.query:
             self.response.write('<option>%s</option>' % self.comment.content)
